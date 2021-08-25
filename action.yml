@@ -15,6 +15,7 @@ runs:
           python3 -m pip install -r smartbugs/requirements.txt
           rm -r smartbugs/dataset/
   - name: Run smartbugs static analysis
+    shell: bash
     run: |
           python3 smartbugs/smartBugs.py --tool conkas --file ./ --unique-sarif-output
           sarif_file="$(basename smartbugs/results/*.sarif)"
